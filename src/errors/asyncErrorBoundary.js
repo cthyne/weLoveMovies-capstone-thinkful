@@ -1,7 +1,7 @@
 function asyncErrorBoundary(delegate, defaultStatus) {
-  return (request, response, next) => {
+  return (req, res, next) => {
     Promise.resolve()
-      .then(() => delegate(request, response, next))
+      .then(() => delegate(req, res, next))
       .catch((error = {}) => {
         const { status = defaultStatus, message = error } = error;
         next({

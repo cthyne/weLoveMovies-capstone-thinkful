@@ -1,8 +1,5 @@
-/**
- * Express API error handler.
- */
- function errorHandler(err, req, res, next) {
-  const { status = 500, message = "Something went wrong!" } = err;
+function errorHandler(error, req, res, next) {
+  const { status = 500, message = "Something went wrong!" } = error;
   res.status(status).json({ error: message });
 }
 
