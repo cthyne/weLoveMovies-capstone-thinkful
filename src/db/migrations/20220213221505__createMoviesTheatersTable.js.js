@@ -1,3 +1,4 @@
+
 exports.up = function(knex) {
     return knex.schema.createTable('movies_theaters', (table) => {
         table.integer('movie_id').unsigned().notNullable()
